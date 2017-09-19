@@ -1,13 +1,10 @@
 import React from 'react';
-import {shallow} from 'enzyme';
 import Invoer from "../components/Invoer";
+import {createRenderer} from 'react-test-renderer/shallow';
 
-import { createRenderer } from 'react-test-renderer/shallow';
-
-it('does it render', () => {
-
+it('does it render and trigger saveTodo event when clicking on button', () => {
     const props = {
-      saveTodo: jest.fn()
+        saveTodo: jest.fn()
     }
 
     const renderer = createRenderer();
@@ -17,10 +14,8 @@ it('does it render', () => {
     //todo expect component top level type
     expect(output.type).toBe('header');
 
-    console.log( output.props.children.props);
-
-    output.props.children.props.onChange();
+    //todo find element that contains the event connected to saveTodo in this case onClick on button
+    output.props.children[1].props.onClick();
 
     expect(props.saveTodo).toBeCalled()
-
-  });
+});
