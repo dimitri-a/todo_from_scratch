@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from 'react';
 
-
 export default class Invoer extends Component {
 
     static propTypes = {
