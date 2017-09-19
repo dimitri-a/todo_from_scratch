@@ -17,7 +17,7 @@ const store = createStore(reducer)
 
 const App = () => (
     <Provider store={store}>
-        <div>
+        <div>kfjsdklfjslkdj
            <Nothing></Nothing>
         </div>
     </Provider>
