@@ -1,16 +1,6 @@
-const todos = (state = [
-
-], action) => {
+const todos = (state = [], action) => {
     switch (action.type) {
-        case "SHOWCOMPLETE":
-            //todo filter is better than map in this case
-            return state.filter(todo => {
-                if (todo.completed) {
-                    return todo
-                }
-
-            })
-        case "ADD":
+        case "ADD_TODO":
             return [
                 ...state,
                 {
@@ -19,24 +9,19 @@ const todos = (state = [
                     completed: false
                 }
             ];
+        case "TOGGLE":
+            return state.map(
+                todo => {
 
-        case "TOGGLE": {
-            //todo dont forget the return here
-            return state.map(todo => {
-                    if (action.text !== todo.name) {
+                    if (todo.name !== action.name) {
                         return todo;
-                        fdsfsd
                     }
-
-                    //todo remove
-                    debugger;
+       
                     return {
                         ...todo,
                         completed: !todo.completed
-                    }
-                }
-            );
-        }
+                    };
+                });
 
 
         default:

@@ -13,12 +13,17 @@ import Nothing from './components/nothing';
 
 import reducer from './components/reducers'
 
+
+import InputTodoContainer from './components/containers/InputTodo'
+import ListTodosContainer from './components/containers/ListTodosContainer'
+
 const store = createStore(reducer)
 
 const App = () => (
     <Provider store={store}>
-        <div>kfjsdklfjslkdj
-           <Nothing></Nothing>
+        <div>
+            <InputTodoContainer></InputTodoContainer>
+           <ListTodosContainer></ListTodosContainer>
         </div>
     </Provider>
 );
