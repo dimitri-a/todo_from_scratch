@@ -14,7 +14,7 @@ import Nothing from './components/nothing';
 import reducer from './reducers/todos'
 
 
-import InputTodoContainer from './components/containers/InputTodo'
+import InputTodoContainer from './components/containers/InputTodoContainer'
 import ListTodosContainer from './components/containers/ListTodosContainer'
 
 const store = createStore(reducer)

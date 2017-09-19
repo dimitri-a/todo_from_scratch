@@ -1,1 +1,1 @@
-export const addProduct  = text => ({ type: 'ADD', text })
+export const addTodo  = text => ({ type: 'ADD_TODO', text })
