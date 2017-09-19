@@ -11,7 +11,7 @@ import Cart from './components/cart';
 import { createStore } from 'redux';
 import Nothing from './components/nothing';
 
-import reducer from './components/reducers'
+import reducer from './reducers/todos'
 
 
 import InputTodoContainer from './components/containers/InputTodo'
