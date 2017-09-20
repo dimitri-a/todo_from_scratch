@@ -14,19 +14,24 @@ export default class Invoer extends Component {
 
 
     onChange = (event) => {
-        this.setState({textValue:event.target.value});
-        console.log(event.target.value);
+        //todo remove
+        debugger;
+        if (event.target.value !== '') {
+            this.setState({textValue: event.target.value});
+            console.log(event.target.value);
+        }
     }
 
-
     onSave = () => {
-        this.props.saveTodo(this.state.textValue);
+        if (this.state.textValue!== '') {
+            this.props.saveTodo(this.state.textValue);
+        }
     }
 
     render() {
         return (
             <header>
-                <input type="text" onChange={this.onChange} />
+                <input type="text" value={this.state.textValue} onChange={this.onChange}/>
                 <button onClick={this.onSave}>save that shit</button>
             </header>
         );

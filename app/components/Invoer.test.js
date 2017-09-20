@@ -11,8 +11,10 @@ it('does it render and trigger saveTodo event when clicking on button', () => {
     renderer.render(<Invoer {...props} />)
     const output = renderer.getRenderOutput()
 
-    //todo expect component top level type
-    expect(output.type).toBe('header');
+    //set text value
+   // output.props.children[0].value ='hoera';
+
+    console.log(output.props);
 
     //todo find element that contains the event connected to saveTodo in this case onClick on button
     output.props.children[1].props.onClick();
