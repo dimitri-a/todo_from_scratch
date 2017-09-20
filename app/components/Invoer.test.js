@@ -2,7 +2,7 @@ import React from 'react';
 import Invoer from "../components/Invoer";
 import {createRenderer} from 'react-test-renderer/shallow';
 
-it('does it render and trigger saveTodo event when clicking on button', () => {
+it('should call this.props.saveTodo event when clicking on button on non empty value', () => {
     const props = {
         saveTodo: jest.fn()
     }
@@ -11,8 +11,8 @@ it('does it render and trigger saveTodo event when clicking on button', () => {
     renderer.render(<Invoer {...props} />)
     const output = renderer.getRenderOutput()
 
-    //set text value
-    //output.props.children[0].value = 'hoera';
+    //tried to mock the state.textValue:
+    output.props.children[0].value = 'hoera';
 
     output.props.children[1].props.onClick();
 
